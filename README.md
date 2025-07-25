@@ -1,5 +1,3 @@
-TODO /etc/ssh/authorized_keys.d/root  
-
 # NixOS Configuration Files
 
 Inspired by https://github.com/mitchellh/nixos-config, I'm creating a simple way to bootstrap a new dev machine.
