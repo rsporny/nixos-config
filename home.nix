@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ pkgs, lib, ... }:
 
 let
   username = "rspo";
@@ -20,10 +20,14 @@ in
 
   programs.ghostty = {
     enable = true;
-    settings.keybind = [
-      "performable:cmd+c=copy_to_clipboard"
-      "cmd+v=paste_from_clipboard"
-    ];
+    settings = {
+      theme = "rose-pine";
+      font-size = 16;
+      keybind = [
+        "performable:cmd+c=copy_to_clipboard"
+        "cmd+v=paste_from_clipboard"
+      ];
+    };
   };
 
   programs.git = {
@@ -50,18 +54,6 @@ in
       package = pkgs.pinentry-gtk2;
       program = "pinentry";
     };
-  };
-
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-  };
-
-  programs.vscode = {
-    enable = true;
-    profiles.default.extensions = with pkgs.vscode-extensions; [
-      ms-python.python
-    ];
   };
 
   home.packages = with pkgs; [
