@@ -83,9 +83,9 @@ in
       repeat-interval = 10;
     };
     "org/gnome/desktop/input-sources" = {
-   #   mru-sources = [ (mkTuple [ "xkb" "us" ]) ];
-      sources = [ (mkTuple [ "xkb" "gb+mac" ]) ];
-   #   xkb-options = [ "lv3:ralt_switch" ];
+      mru-sources = [ (mkTuple [ "xkb" "us" ]) ];
+      sources = [ (mkTuple [ "xkb" "us+mac" ]) ];
+      xkb-options = [ "lv3:ralt_switch" ];
     };
   };
 
