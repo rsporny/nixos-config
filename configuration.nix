@@ -31,14 +31,8 @@ in
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-
-  # Configure keymap in X11
-  #services.xserver.xkb = {
-  #  layout = "gb";
-  #  variant = "mac";
-  #};
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
 
   users.users.rspo = {
     isNormalUser = true;
@@ -49,7 +43,7 @@ in
 
   security.sudo.enable = true;
 
-#  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   environment.systemPackages = with pkgs; [
     git
@@ -77,8 +71,6 @@ in
   };
 
   virtualisation.docker.enable = true;
-
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ "prl-tools" "vscode" ];
 
   system.stateVersion = "25.05";
 }
