@@ -20,10 +20,14 @@ in
 
   programs.ghostty = {
     enable = true;
-    settings.keybind = [
-      "performable:cmd+c=copy_to_clipboard"
-      "cmd+v=paste_from_clipboard"
-    ];
+    settings = {
+      theme = "rose-pine";
+      font-size = 15;
+      keybind = [
+        "performable:cmd+c=copy_to_clipboard"
+        "cmd+v=paste_from_clipboard"
+      ];
+    };
   };
 
   programs.git = {
